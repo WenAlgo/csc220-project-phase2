@@ -52,17 +52,14 @@ public:
     }
 
     void PrintElements() {
-        node* currentptr = head;					//create new node that points to headptr
-    
-        while (currentptr != nullptr) {				//traverse through entire list
-            if (currentptr == tail) {				//check if it's at the end of the list
-                cout << currentptr->data << endl;	//print without comma and end with a new line
-                currentptr = currentptr->next;		//move to next node
-            }
-            else {
-                cout << currentptr->data << ", ";	//if it's not at the end, print with comma and a space
-                currentptr = currentptr->next;		//move to next node
-            }
+        node* currentptr = head;					            //create new node that points to headptr
+
+        while (currentptr) {                                    //traverse through entire list
+            //check when to end with a new line or a comma
+            if (currentptr == tail) { cout << currentptr->data << endl; }
+            else { cout << currentptr->data << ", "; }
+
+            currentptr = currentptr->next;                      //move to next node
         }
     }
 
