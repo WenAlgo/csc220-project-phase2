@@ -68,7 +68,7 @@ void PrintReverse(){
 //MAIN
 int main(){
 	for (int i=0; i<15; i++){AddToTail(rand()%100);}
-	PrintElements();
+	PrintElements(head, tail);
 	cout<<endl;
 	
 	int choice;
@@ -82,7 +82,7 @@ int main(){
 				cin>>num;
 				AddToTail(num);
 			}
-			if (choice==2){PrintElements();}
+			if (choice==2){PrintElements(head, tail);}
 			if (choice==3){PrintReverse();}
 		}
 		else{cout<<"Your entry is invalid."<<endl;}
