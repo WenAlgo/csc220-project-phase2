@@ -9,17 +9,15 @@ struct node {
 };
 
 class DoublyLinkedList {
-
 private:
     int count=0;
-    node *head=NULL;    //head of linked-list
-    node *tail=NULL;    //end of linked-list
-
+    node *head=NULL;            //head of linked-list
+    node *tail=NULL;            //end of linked-list
 public:
-    void AddToTail(int b){
+    void AddToTail(int a){
         node *ptr;					
         ptr=new node;
-        ptr->data=b;
+        ptr->data=a;
         if (count==0){			//if there is no list yet, 
             ptr->prev=NULL;		//we make the new entrys prev NULL,
             head=ptr;			//and then we make head equal to the new entry
@@ -27,29 +25,11 @@ public:
         else{					//else, if the linked list already has data
             tail->next=ptr;		//the current tail's next becomes the new entry	
             ptr->prev = tail;
-        }
-                                //to update the nodes now...	
+        }                       //to update the nodes now...	
         ptr->next=NULL;			//we make the new entries next NULL
         tail=ptr;				//then we update the tail to the new entry
         count++;	
-    }
-    
-    void AddToHead(int a){
-        node *ptr;
-        ptr=new node;
-        ptr->data=a;
-        if (count==0){
-            ptr->next=NULL;
-            tail=ptr;
-        }
-        else{
-            ptr->next=head;	
-            head->prev=ptr;					
-        }
-        ptr->prev=NULL;
-        head=ptr;
-        count++;			
-    }
+    }    
 
     void PrintElements() {
         node* currentptr = head;			        //create new node that points to headptr
@@ -76,24 +56,17 @@ public:
 
 int main() {
     DoublyLinkedList list;
-
-    // Seed the random number generator to get a different sequence each time
-    srand(time(0));
-
-    // Add 15 random elements to the list
-    for (int i = 0; i < 15; ++i) {
+    
+    srand(time(0));                        // Seed the random number generator to get a different sequence each time
+   
+    for (int i = 0; i < 15; ++i) {        // Add 15 random elements to the list
         list.AddToTail(rand() % 100);
     }
     list.PrintElements();
 
     int choice;
     do {
-        cout << "Menu:" << endl;
-        cout << "Option 1: Add new element." << endl;
-        cout << "Option 2: Print List elements." << endl;
-        cout << "Option 3: Print List elements in reverse order." << endl;
-        cout << "Option 4: Exit" << endl;
-        cout << "Enter your choice: ";
+        cout << "Menu:" << endl <<"Enter your choice: Add a new element(1), Print(2), Print reverse(3), or exit(4): ";
         cin >> choice;
 
         switch (choice) {
