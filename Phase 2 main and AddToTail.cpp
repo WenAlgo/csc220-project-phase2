@@ -47,8 +47,19 @@ void AddToHead(int a){
 	count++;			
 }
 			
-void PrintElements(){
-	
+void PrintElements(node* headptr, node* tailptr) {
+	node* currentptr = headptr;						//create new node that points to headptr
+	while (currentptr != nullptr) {					//traverse through entire list
+		if (currentptr == tailptr) {				//check if it's at the end of the list
+			cout << currentptr->data << endl;		//print without comma and end with a new line
+			currentptr = currentptr->next;			//move to next node
+		}
+		else {
+			cout << currentptr->data << ", ";		//if it's not at the end, print with comma and a space
+			currentptr = currentptr->next;			//move to next node
+		}
+
+	}
 }
 void PrintReverse(){
 	
