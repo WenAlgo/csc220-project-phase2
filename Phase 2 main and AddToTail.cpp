@@ -48,7 +48,7 @@ void AddToHead(int a){
 }
 			
 void PrintElements(node* headptr, node* tailptr) {
-	node* currentptr = headptr;						//create new node that points to headptr
+	node* currentptr = headptr;					//create new node that points to headptr
 	while (currentptr != nullptr) {					//traverse through entire list
 		if (currentptr == tailptr) {				//check if it's at the end of the list
 			cout << currentptr->data << endl;		//print without comma and end with a new line
