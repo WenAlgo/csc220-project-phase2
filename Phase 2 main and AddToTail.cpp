@@ -82,7 +82,7 @@ int main(){
 	do{
 		cout<<"Enter your choice: Add a new element(1), Print(2), Print reverse(3), or exit(4): ";
 		cin>>choice;
-		if((choice==1) ||(choice==2)||(choice==3)){		
+		if((choice==1) ||(choice==2)||(choice==3) || (choice==4){		
 			if (choice==1){
 				cout<<"Enter an integer: ";
 				cin>>num;
