@@ -22,7 +22,8 @@ void AddToTail(int b){
 		head=ptr;			//and then we make head equal to the new entry
 	}
 	else{					//else, if the linked list already has data
-		tail->next=ptr;		//the current tail's next becomes the new entry			
+		tail->next=ptr;		//the current tail's next becomes the new entry	
+		ptr->prev = tail;
 	}
 							//to update the nodes now...	
 	ptr->next=NULL;			//we make the new entries next NULL
@@ -62,7 +63,12 @@ void PrintElements(node* headptr, node* tailptr) {
 	}
 }
 void PrintReverse(){
-	
+    node* current = tail;
+    while (current) {
+        cout << current->data << ", ";
+        current = current->prev;
+    }
+    cout << endl;
 }	
 			
 //MAIN
