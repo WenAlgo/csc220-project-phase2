@@ -52,7 +52,7 @@ public:
     }
 
     void PrintElements() {
-        node* currentptr = head;					  //create new node that points to headptr
+        node* currentptr = head;			  //create new node that points to headptr
 
         while (currentptr) {                                    //traverse through entire list
             //check when to end with a new line or a comma
