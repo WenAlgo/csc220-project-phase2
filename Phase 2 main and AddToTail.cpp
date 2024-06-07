@@ -82,18 +82,14 @@ int main() {
 
     // Add 15 random elements to the list
     for (int i = 0; i < 15; ++i) {
-        list.AddToTail(rand() % 100);
+        // ((rand() % 100) + 1) Set random numbers from 1 to 100.
+        list.AddToTail((rand() % 100) + 1);
     }
     list.PrintElements();
 
     int choice;
     do {
-        cout << "Menu:" << endl;
-        cout << "Option 1: Add new element." << endl;
-        cout << "Option 2: Print List elements." << endl;
-        cout << "Option 3: Print List elements in reverse order." << endl;
-        cout << "Option 4: Exit" << endl;
-        cout << "Enter your choice: ";
+        cout<<"Enter your choice: Add a new element(1), Print(2), Print reverse(3), or exit(4): ";
         cin >> choice;
 
         switch (choice) {
@@ -105,18 +101,15 @@ int main() {
                 break;
             }
             case 2:
-                cout << "List elements: " << endl;
                 list.PrintElements();
                 break;
             case 3:
-                cout << "List elements in reverse order: " << endl;
                 list.PrintReverse();
                 break;
             case 4:
-                cout << "Exiting..." << endl;
                 break;
             default:
-                cout << "Invalid choice. Please try again." << endl;
+                cout<<"Your entry is invalid."<<endl;
         }
     } while (choice != 4);
 
